@@ -12,7 +12,8 @@ Console.WriteLine("Start program");
 using (SqlConnection sqlCon = new SqlConnection(DBFacilities.GetConnectionString()))
 {
     //bool checkTable;
-    string sqlCmdExTableCheck = @"SELECT *  FROM [sampd_cexs].[dbo].[TEL_VID_CONNECT]";
+    //string sqlCmdExTableCheck = @"SELECT *  FROM [sampd_cexs].[dbo].[TEL_VID_CONNECT]";   // for table in local MS SQL Server
+    string sqlCmdExTableCheck = @"SELECT *  FROM [sampd_cexs].[dbo].[TEL_VID_CONNECT]";  // for table in remote MS SQL Server
 
     using (SqlCommand sqlCmd = new SqlCommand(sqlCmdExTableCheck, sqlCon))
     {
