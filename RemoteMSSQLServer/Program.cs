@@ -21,35 +21,30 @@ using (SqlConnection sqlCon = new SqlConnection(DBFacilities.GetConnectionString
 
             ConnectionState conState = sqlCon.State;
 
-            Console.WriteLine("conState");
+            Console.WriteLine(conState);
 
             sqlCon.Open();
 
+            Console.WriteLine("connection open successfully");
+
             conState = sqlCon.State;
 
-            Console.WriteLine("conState");
+            Console.WriteLine(conState);
 
             using (SqlDataReader reader = sqlCmd.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    Console.WriteLine(String.Format("{0}, {1}",
-                        reader[0], reader[1]));
+                    Console.WriteLine(String.Format("{0}, {1}, {3}",
+                        reader[0], reader[1], reader[2]));
                 }
             }
-
-
-
-            Console.WriteLine("connection open successfully");
-
-            var dataSource = sqlCon.DataSource;
-            ; ; ;
             sqlCon.Close();
             Console.WriteLine("connection closed successfully");
         }
         catch(SqlException se )
         {
-
+            ;
         }
     }
     Console.WriteLine("end of program");
