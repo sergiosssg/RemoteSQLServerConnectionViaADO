@@ -35,7 +35,7 @@ using (SqlConnection sqlCon = new SqlConnection(DBFacilities.GetConnectionString
             {
                 while (reader.Read())
                 {
-                    Console.WriteLine(String.Format("{0}, {1}, {3}",
+                    Console.WriteLine(String.Format("{0}, {1}, {2}",
                         reader[0], reader[1], reader[2]));
                 }
             }
